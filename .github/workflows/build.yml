@@ -31,7 +31,7 @@ jobs:
     - name: Restore the application
       run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration=$env:Configurationmsbuild /p:Platform="AnyCPU"
       env:
-        Configuration: ${{ matrix.configuration }}
+        Configuration: Debug
 
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
     - name: Upload build artifacts
