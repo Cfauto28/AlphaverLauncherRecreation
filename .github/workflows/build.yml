@@ -29,7 +29,7 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration=$env:Configurationmsbuild /p:Platform="Any CPU"
+      run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration=$env:Configurationmsbuild /p:Platform="AnyCPU"
       env:
         Configuration: ${{ matrix.configuration }}
 
