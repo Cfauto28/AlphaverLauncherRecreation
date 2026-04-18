@@ -10,11 +10,6 @@ on:
 jobs:
 
   build:
-
-    strategy:
-      matrix:
-        configuration: [Debug, Release]
-
     runs-on: windows-2022  
                    
     steps:
@@ -29,7 +24,7 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration=$env:Configurationmsbuild /p:Platform="AnyCPU"
+      run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration="Debug" /p:Platform="AnyCPU"
       env:
         Configuration: Debug
 
@@ -37,5 +32,3 @@ jobs:
     - name: Upload build artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: MSIX Package
-        path: ${{ env.Wap_Project_Directory }}\AppPackages
