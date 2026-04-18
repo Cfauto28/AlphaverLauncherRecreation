@@ -24,10 +24,15 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration="Debug" /p:Platform="Any CPU"
+      run: msbuild AlphaverLauncherRecreation.sln /t:Restore /p:Configuration="Debug" /p:Platform="Any CPU"
       env:
         Configuration: Debug
 
+   # Restore the application to populate the obj folder with RuntimeIdentifiers
+    - name: Build the application
+      run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration="Debug" /p:Platform="Any CPU"
+      env:
+        Configuration: Debug
     # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
    # - name: Upload build artifacts
    #   uses: actions/upload-artifact@v4
