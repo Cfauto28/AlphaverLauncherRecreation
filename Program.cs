@@ -5,7 +5,7 @@ namespace AlphaverLauncherRecreation
 {
     internal static class Program
     {
-        public static string version = "4-rc1";
+        public static string version = "4-dev";
 
         /// <summary>
         /// The main entry point for the application.

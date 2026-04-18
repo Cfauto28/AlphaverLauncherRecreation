@@ -36,7 +36,7 @@ namespace AlphaverLauncherRecreation
             {
                 settings.username = defaultUsername;
                 settings.folderStructure.gameDirectory = ".\\";
-                settings.arguments = "-Xmx2G";
+                settings.arguments = "-Xms2G -Xmx2G -XX:+UseG1GC";
                 settings.discordRPC = true;
                 settings.loadingBar = true;
                 settings.consoleWindow = true;
@@ -100,7 +100,7 @@ namespace AlphaverLauncherRecreation
 
             if (settings.version == "" || settings.version == null)
             {
-                Popup popup = new Popup("", "Please set version", false, true, false);
+                Popup popup = new Popup("", "Please set the version you want to play", false, true, false);
                 popup.Show();
                 return;
             }
@@ -167,7 +167,7 @@ namespace AlphaverLauncherRecreation
                     return Downloader($"{settings.folderStructure.jars}/{version}.jar", new Uri($"http://dl.dropboxusercontent.com/scl/fi/9wda9dh7y7wl84e0euf2c/ext1605_20.jar?rlkey=67ci8p8r7gu3ujdvzameecn98&dl=0"));
                 }
                 {
-                    return Downloader($"{settings.folderStructure.jars}/{version}.jar", new Uri($"https://github.com/Gnawmon/AlphaverLauncherRecreation/raw/main/files/jars/{version}.jar"));
+                    return Downloader($"{settings.folderStructure.jars}/{version}.jar", new Uri($"https://github.com/Cfauto28/AlphaverLauncherRecreation/raw/main/files/jars/{version}.jar"));
                 }
             }
             else
