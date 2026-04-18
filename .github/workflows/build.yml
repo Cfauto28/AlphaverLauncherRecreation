@@ -22,9 +22,6 @@ jobs:
     - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v2
 
-    - name: Setup NuGet.exe for use with actions
-      uses: NuGet/setup-nuget@v4.0
-
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
       run: nuget restore AlphaverLauncherRecreation.sln
@@ -34,7 +31,10 @@ jobs:
       run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration="Debug" /p:Platform="Any CPU"
       env:
         Configuration: Debug
-    # Upload the MSIX package: https://github.com/marketplace/actions/upload-a-build-artifact
-   # - name: Upload build artifacts
-   #   uses: actions/upload-artifact@v4
-
+    # Upload the artifact
+    - name: Upload build artifacts
+      uses: actions/upload-artifact@v7.0.1
+      with:
+        name: launcher_dev.zip
+        path: bin/Debug/*
+        
