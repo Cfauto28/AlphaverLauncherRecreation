@@ -16,9 +16,7 @@ jobs:
         configuration: [Debug, Release]
 
     runs-on: windows-2022  
-
-    env:
-      Solution_Name: AlphaverLauncherRecreation                      
+                   
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -31,7 +29,7 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore the application
-      run: msbuild $env:Solution_Name /t:Rebuild /p:Configuration=$env:Configurationmsbuild
+      run: msbuild AlphaverLauncherRecreation.sln /t:Rebuild /p:Configuration=$env:Configurationmsbuild
       env:
         Configuration: ${{ matrix.configuration }}
 
