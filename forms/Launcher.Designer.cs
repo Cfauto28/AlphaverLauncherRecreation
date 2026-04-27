@@ -47,7 +47,7 @@ namespace AlphaverLauncherRecreation
             this.website.Name = "website";
             this.website.Size = new System.Drawing.Size(707, 329);
             this.website.TabIndex = 0;
-            this.website.Url = new System.Uri("../resources/website/index.html", System.UriKind.Absolute);
+            this.website.Url = new System.Uri("file://../resources/website/index.html", System.UriKind.Absolute);
             // 
             // playButton
             // 
