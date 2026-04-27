@@ -47,7 +47,7 @@ namespace AlphaverLauncherRecreation
             this.website.Name = "website";
             this.website.Size = new System.Drawing.Size(707, 329);
             this.website.TabIndex = 0;
-            this.website.Url = new System.Uri("https://exalpha-dev.github.io/", System.UriKind.Absolute);
+            this.website.Url = new System.Uri("https://cfauto28.github.io/testalpha.github.io/index.html", System.UriKind.Absolute);
             // 
             // playButton
             // 
