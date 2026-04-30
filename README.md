@@ -1,6 +1,5 @@
 # AlphaverLauncherRecreation (Cfauto 28 Fork)
-It's a recreation of [Minecraft Alpha 1.0.16 Versions ARG](https://www.youtube.com/@user-le2ev9cj8q) launcher.
-
+It's a recreation of the Minecraft Alpha 1.0.16.05 Launcher 
 Feel free to create a pull request to add/fix stuff.
 
 # Screenshot(s)
